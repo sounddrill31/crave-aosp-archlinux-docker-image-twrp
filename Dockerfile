@@ -49,6 +49,9 @@ RUN set -x \
   && git clone https://aur.archlinux.org/paru.git && cd paru && makepkg -si --noconfirm && cd .. && rm -rf paru \
   && paru -S multilib-devel aosp-devel lineageos-devel --noconfirm
 
+COPY telegram /usr/bin/
+COPY upload /usr/bin/
+
 ENV REPO_NO_INTERACTIVE=1 \
     GIT_TERMINAL_PROMPT=0
 

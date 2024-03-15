@@ -1,0 +1,19 @@
+#!/bin/bash
+
+STORE=$(curl -s https://api.gofile.io/getServer | jq -r '.data.server')
+APIKEY=$GOFILEIOAPIKEY
+normalup() {
+  MESSAGE=$(curl -F file=@"$1" https://${STORE}.gofile.io/uploadFile | jq)
+}
+tokenup() {
+  MESSAGE=$(curl -F file=@"$1" -H "Authorization: Bearer ${APIKEY}" https://${STORE}.gofile.io/uploadFile | jq)
+}
+
+if [[ $1 == "-t" ]]; then
+    shift  #shift arg, considering file path is always provided
+    tokenup "$1"
+else
+    normalup "$1"
+fi
+echo $MESSAGE	
+telegram -C "$MESSAGE"
