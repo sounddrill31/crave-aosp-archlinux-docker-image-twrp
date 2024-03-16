@@ -49,6 +49,8 @@ RUN set -x \
   && git clone https://aur.archlinux.org/paru.git && cd paru && makepkg -si --noconfirm && cd .. && rm -rf paru \
   && paru -S multilib-devel aosp-devel lineageos-devel --noconfirm
 
+RUN sudo chmod 777 /etc/mke2fs.conf
+
 COPY telegram /usr/bin/
 COPY upload /usr/bin/
 
