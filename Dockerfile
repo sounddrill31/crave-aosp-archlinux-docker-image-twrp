@@ -3,7 +3,7 @@ FROM archlinux:latest
 COPY sshd_config /tmp/
 RUN set -x && \
   pacman -Sy --noconfirm \
-  && pacman -Syu base-devel bash-completion binutils cmake extra-cmake-modules cargo curl emacs ffmpeg git git-lfs guile jq meson ninja popt xxhash github-cli gradle lsb-release lsb-release ninja openssh openssl pacman-contrib psmisc remake repo rsync subversion sudo tmux vim neovim wget --noconfirm \
+  && pacman -Syu base-devel bash-completion binutils cmake extra-cmake-modules cargo curl emacs ffmpeg git git-lfs guile jq meson ninja popt xxhash github-cli gradle lsb-release lsb-release ninja openssh openssl pacman-contrib psmisc remake repo rsync subversion sudo tmux vim neovim wget neofetch --noconfirm \
   && pacman -Sc --noconfirm \
   && /usr/bin/ssh-keygen -A \
   && mkdir -p /etc/crave \
@@ -47,7 +47,9 @@ RUN set -x \
   && wget https://omansh.vercel.app/api/raw/?path=/omansh/pkgs/lib32-ncurses5-compat-libs/lib32-ncurses5-compat-libs-6.4-1-x86_64.pkg.tar.zst \
   && sudo pacman -U ./*zst --noconfirm && rm *zst \
   && git clone https://aur.archlinux.org/paru.git && cd paru && makepkg -si --noconfirm && cd .. && rm -rf paru \
-  && paru -S multilib-devel aosp-devel lineageos-devel python2 --noconfirm \
+  && paru -S multilib-devel aosp-devel lineageos-devel python2 jdk8-openjdk --noconfirm \
+  && java -version \
+  && neofetch \
   && sudo ln -sf /usr/bin/python2 /usr/bin/python
 
 RUN sudo chmod 777 /etc/mke2fs.conf
