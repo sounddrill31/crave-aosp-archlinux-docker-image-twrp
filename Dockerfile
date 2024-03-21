@@ -48,7 +48,7 @@ RUN set -x \
   && sudo pacman -U ./*zst --noconfirm && rm *zst \
   && git clone https://aur.archlinux.org/paru.git && cd paru && makepkg -si --noconfirm && cd .. && rm -rf paru \
   && paru -S multilib-devel aosp-devel lineageos-devel python2 jdk8-openjdk --noconfirm \
-  && archlinux-java set java-8-openjdk \
+  && sudo archlinux-java set java-8-openjdk \
   && java -version \
   && neofetch \
   && sudo ln -sf /usr/bin/python2 /usr/bin/python
