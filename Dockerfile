@@ -48,6 +48,7 @@ RUN set -x \
   && sudo pacman -U ./*zst --noconfirm && rm *zst \
   && git clone https://aur.archlinux.org/paru.git && cd paru && makepkg -si --noconfirm && cd .. && rm -rf paru \
   && paru -S multilib-devel aosp-devel lineageos-devel python2 jdk7 --noconfirm \
+  && sudo archlinux-java status \
   && sudo archlinux-java set jdk7 \
   && java -version \
   && neofetch \
