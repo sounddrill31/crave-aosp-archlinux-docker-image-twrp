@@ -25,4 +25,4 @@ jobs:
       run: |
         docker buildx create --use
         docker buildx inspect --bootstrap
-        docker buildx build -t sounddrill31/crave-archlinux-twrp:latest -t sounddrill31/crave-archlinux-twrp:$(date +%Y%m%d%H%M%S) --platform linux/amd64 . --push
+        docker buildx build -t sounddrill31/crave-archlinux-twrp-ultralegacy:latest -t sounddrill31/crave-archlinux-twrp:$(date +%Y%m%d%H%M%S) --platform linux/amd64 . --push

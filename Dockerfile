@@ -47,8 +47,8 @@ RUN set -x \
   && wget https://omansh.vercel.app/api/raw/?path=/omansh/pkgs/lib32-ncurses5-compat-libs/lib32-ncurses5-compat-libs-6.4-1-x86_64.pkg.tar.zst \
   && sudo pacman -U ./*zst --noconfirm && rm *zst \
   && git clone https://aur.archlinux.org/paru.git && cd paru && makepkg -si --noconfirm && cd .. && rm -rf paru \
-  && paru -S multilib-devel aosp-devel lineageos-devel python2 jdk8-openjdk --noconfirm \
-  && sudo archlinux-java set java-8-openjdk \
+  && paru -S multilib-devel aosp-devel lineageos-devel python2 jdk7 --noconfirm \
+  && sudo archlinux-java set jdk7 \
   && java -version \
   && neofetch \
   && sudo ln -sf /usr/bin/python2 /usr/bin/python
