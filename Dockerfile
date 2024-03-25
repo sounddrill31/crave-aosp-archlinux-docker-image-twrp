@@ -47,7 +47,7 @@ RUN set -x \
   && wget https://omansh.vercel.app/api/raw/?path=/omansh/pkgs/lib32-ncurses5-compat-libs/lib32-ncurses5-compat-libs-6.4-1-x86_64.pkg.tar.zst \
   && sudo pacman -U ./*zst --noconfirm && rm *zst \
   && git clone https://aur.archlinux.org/paru.git && cd paru && makepkg -si --noconfirm && cd .. && rm -rf paru \
-  && export XDG_DOWNLOAD_DIR="/home/admin/Downloads"
+  && export XDG_DOWNLOAD_DIR="/home/admin/Downloads" \
   && mkdir /home/admin/Downloads || true \
   && wget -P /home/admin/Downloads https://mirrors.huaweicloud.com/java/jdk/7u80-b15/jdk-7u80-linux-x64.tar.gz \
   && paru -S multilib-devel aosp-devel lineageos-devel python2 jdk7 --noconfirm \
