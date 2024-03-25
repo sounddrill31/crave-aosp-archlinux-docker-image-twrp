@@ -49,7 +49,7 @@ RUN set -x \
   && git clone https://aur.archlinux.org/paru.git && cd paru && makepkg -si --noconfirm && cd .. && rm -rf paru \
   && export XDG_DOWNLOAD_DIR="/home/admin/Downloads" \
   && mkdir /home/admin/Downloads || true \
-  && wget -P /home/admin/Downloads https://mirrors.huaweicloud.com/java/jdk/7u80-b15/jdk-7u80-linux-x64.tar.gz \
+  && wget -P /home/admin/Downloads https://omansh.vercel.app/api/raw/?path=/sounddrill/prebuilts/jdk-7u80-linux-x64.tar.gz \
   && paru -S multilib-devel aosp-devel lineageos-devel python2 jdk7 --noconfirm \
   && sudo archlinux-java status \
   && sudo archlinux-java set java-7-jdk \
