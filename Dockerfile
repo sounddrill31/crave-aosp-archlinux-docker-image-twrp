@@ -52,7 +52,7 @@ RUN set -x \
   && wget -P /home/admin/Downloads https://mirrors.huaweicloud.com/java/jdk/7u80-b15/jdk-7u80-linux-x64.tar.gz \
   && paru -S multilib-devel aosp-devel lineageos-devel python2 jdk7 --noconfirm \
   && sudo archlinux-java status \
-  && sudo archlinux-java set jdk7 \
+  && sudo archlinux-java set java-7-jdk \
   && java -version \
   && neofetch \
   && sudo ln -sf /usr/bin/python2 /usr/bin/python
