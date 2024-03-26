@@ -50,9 +50,10 @@ RUN set -x \
   && export XDG_DOWNLOAD_DIR="/home/admin/Downloads" \
   && mkdir /home/admin/Downloads || true \
   && wget -P /home/admin/Downloads https://omansh.vercel.app/api/raw/?path=/sounddrill/prebuilts/jdk-7u80-linux-x64.tar.gz \
-  && paru -S multilib-devel aosp-devel lineageos-devel python2 jdk7 --noconfirm \
+  && paru -S multilib-devel aosp-devel lineageos-devel python2 --noconfirm \
+  && git clone https://github.com/aur-archive/java7-openjdk.git && cd java7-openjdk && makepkg -si --noconfirm && cd .. && rm -rf java7-openjdk \
   && sudo archlinux-java status \
-  && sudo archlinux-java set java-7-jdk \
+  && sudo archlinux-java set jdk7-openjdk \
   && java -version \
   && neofetch \
   && sudo ln -sf /usr/bin/python2 /usr/bin/python
