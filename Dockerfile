@@ -49,7 +49,7 @@ RUN set -x \
   && git clone https://aur.archlinux.org/paru.git && cd paru && makepkg -si --noconfirm && cd .. && rm -rf paru \
   && export XDG_DOWNLOAD_DIR="/home/admin/Downloads" \
   && mkdir /home/admin/Downloads || true \
-  && wget -P /home/admin/Downloads https://github.com/openjdk/jdk/archive/refs/tags/jdk7-b146.tar.gz \
+  && wget -P /home/admin/Downloads https://github.com/openjdk/jdk/archive/refs/tags/jdk7-b147.tar.gz \
   && paru -S multilib-devel aosp-devel lineageos-devel python2 --noconfirm \
   && git clone https://github.com/aur-archive/java7-openjdk.git && cd java7-openjdk && makepkg -si --noconfirm && cd .. && rm -rf java7-openjdk \
   && sudo archlinux-java status \
