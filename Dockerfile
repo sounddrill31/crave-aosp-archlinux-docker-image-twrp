@@ -49,7 +49,7 @@ RUN set -x \
   && git clone https://aur.archlinux.org/paru.git && cd paru && makepkg -si --noconfirm && cd .. && rm -rf paru \
   && export XDG_DOWNLOAD_DIR="/home/admin/Downloads" \
   && mkdir /home/admin/Downloads || true \
-  && wget -P /home/admin/Downloads https://omansh.vercel.app/api/raw/?path=/sounddrill/prebuilts/jdk-7u80-linux-x64.tar.gz \
+  && wget -P /home/admin/Downloads https://bitbucket.org/alexkasko/openjdk-unofficial-builds/downloads/openjdk-1.7.0-u80-unofficial-linux-amd64-image.zip \
   && paru -S multilib-devel aosp-devel lineageos-devel python2 --noconfirm \
   && git clone https://github.com/aur-archive/java7-openjdk.git && cd java7-openjdk && makepkg -si --noconfirm && cd .. && rm -rf java7-openjdk \
   && sudo archlinux-java status \
